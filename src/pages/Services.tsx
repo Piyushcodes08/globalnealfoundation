@@ -30,14 +30,12 @@ export default function Services() {
           <img
             src="/services-hero-bg.webp"
             alt="Neal Foundation Services Background"
-            className="h-screen w-full object-cover"
+            className="h-full w-full object-cover"
+            fetchPriority="high"
           />
-
-   
         </div>
 
-
-        <div className="container relative z-10 mx-auto px-6 pb-20 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 pb-20 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -70,11 +68,11 @@ export default function Services() {
               drive measurable growth.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-4 pt-2">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
               <Button
                 size="lg"
                 asChild
-                className="h-[52px] rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
+                className="h-[52px] w-full sm:w-auto rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
               >
                 <Link href="/contact">
                   Get Started <ArrowRight className="ml-2 h-4 w-4" />
@@ -85,7 +83,7 @@ export default function Services() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="h-[52px] rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
+                className="h-[52px] w-full sm:w-auto rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
               >
                 <a href="#service-list">
                   View Services <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -99,7 +97,7 @@ export default function Services() {
       {/* SERVICE CARDS */}
       <section
         id="service-list"
-        className="relative overflow-hidden bg-background py-28 lg:py-32"
+        className="relative overflow-hidden bg-background py-20 lg:py-32"
         data-testid="section-services"
       >
         <div className="absolute inset-0 dot-grid-light opacity-35" />
@@ -108,22 +106,22 @@ export default function Services() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mb-16"
+            className="mb-12 sm:mb-16"
           >
             <motion.div variants={fadeUp} className="mb-6">
               <SectionLabel>What We Offer</SectionLabel>
             </motion.div>
 
-            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <div className="flex flex-col justify-between gap-6 sm:gap-8 lg:flex-row lg:items-end">
               <motion.h2
                 variants={fadeUp}
-                className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 Comprehensive Solutions <br />
                 <em className="not-italic text-primary">Built for Scale</em>
@@ -221,18 +219,18 @@ export default function Services() {
       </section>
 
       {/* DETAILED SERVICES */}
-      <section className="relative overflow-hidden bg-muted py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-muted py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-45" />
         <div className="absolute right-0 top-0 h-[560px] w-[560px] rounded-full bg-primary/7 blur-[130px]" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mb-16 max-w-3xl"
+            className="mb-12 sm:mb-16 max-w-3xl"
           >
             <motion.div variants={fadeUp} className="mb-6">
               <SectionLabel>Service Depth</SectionLabel>
@@ -240,7 +238,7 @@ export default function Services() {
 
             <motion.h2
               variants={fadeUp}
-              className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+              className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
             >
               Built to Support Every <br />
               <em className="not-italic text-primary">Stage of Growth</em>
@@ -263,28 +261,28 @@ export default function Services() {
               >
                 <div className="absolute left-0 top-0 h-full w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100" />
 
-                <div className="relative p-7 lg:col-span-4 lg:p-9">
-                  <span className="mb-5 block font-serif text-xs font-bold tracking-[0.24em] text-primary/60">
+                <div className="relative p-6 sm:p-7 lg:col-span-4 lg:p-9">
+                  <span className="mb-4 sm:mb-5 block font-serif text-xs font-bold tracking-[0.24em] text-primary/60">
                     {service.num}
                   </span>
 
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
+                  <div className="mb-5 sm:mb-6 flex h-11 w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
                     {service.icon}
                   </div>
 
-                  <h3 className="font-serif text-2xl font-bold leading-tight text-foreground transition-colors duration-500 group-hover:text-primary">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold leading-tight text-foreground transition-colors duration-500 group-hover:text-primary">
                     {service.title}
                   </h3>
                 </div>
 
-                <div className="border-t border-border/70 p-7 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-9">
+                <div className="border-t border-border/70 p-6 sm:p-7 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-9">
                   <p className="text-sm font-light leading-relaxed text-muted-foreground">
                     {service.longDesc}
                   </p>
                 </div>
 
-                <div className="border-t border-border/70 p-7 lg:col-span-3 lg:border-l lg:border-t-0 lg:p-9">
-                  <ul className="space-y-3">
+                <div className="border-t border-border/70 p-6 sm:p-7 lg:col-span-3 lg:border-l lg:border-t-0 lg:p-9">
+                  <ul className="space-y-2.5 sm:space-y-3">
                     {service.features.slice(0, 4).map((feature) => (
                       <li
                         key={feature}
@@ -303,18 +301,18 @@ export default function Services() {
       </section>
 
       {/* PROCESS */}
-      <section className="relative overflow-hidden bg-background py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-35" />
         <div className="absolute left-0 bottom-0 h-[520px] w-[520px] rounded-full bg-primary/6 blur-[130px]" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              className="space-y-7"
+              className="space-y-6 sm:space-y-7"
             >
               <motion.div variants={fadeUp}>
                 <SectionLabel>How We Work</SectionLabel>
@@ -322,7 +320,7 @@ export default function Services() {
 
               <motion.h2
                 variants={fadeUp}
-                className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 A Clear Framework for <br />
                 <em className="not-italic text-primary">Operational Success</em>
@@ -337,7 +335,7 @@ export default function Services() {
                 business growth.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <motion.div variants={fadeUp} className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-3">
                 {[
                   {
                     icon: <Target className="h-4 w-4" />,
@@ -354,9 +352,9 @@ export default function Services() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="group border border-border/70 bg-card p-5 transition-all duration-500 hover:border-primary/30 hover:bg-primary/[0.04]"
+                    className="group border border-border/70 bg-card p-4 sm:p-5 transition-all duration-500 hover:border-primary/30 hover:bg-primary/[0.04]"
                   >
-                    <div className="mb-4 flex h-9 w-9 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                    <div className="mb-3 sm:mb-4 flex h-9 w-9 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
                       {item.icon}
                     </div>
 
@@ -382,13 +380,13 @@ export default function Services() {
                     duration: 0.55,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="group relative flex gap-5 sm:gap-7"
+                  className="group relative flex gap-4 sm:gap-7"
                 >
                   <div className="relative z-10 mt-1 flex h-9 w-9 flex-shrink-0 items-center justify-center border border-primary/25 bg-background text-[11px] font-serif font-bold italic text-primary/55 transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_14px_35px_rgba(220,38,38,0.22)]">
                     {step.n}
                   </div>
 
-                  <div className="flex-1 border-t border-border/80 pt-5 transition-all duration-500 group-hover:border-primary/45">
+                  <div className="flex-1 border-t border-border/80 pt-4 sm:pt-5 transition-all duration-500 group-hover:border-primary/45">
                     <h4 className="mb-2 font-serif text-lg font-bold text-foreground transition-colors duration-500 group-hover:text-primary">
                       {step.title}
                     </h4>
@@ -405,43 +403,43 @@ export default function Services() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-muted py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-muted py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-45" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.065),transparent_45%)]" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto max-w-5xl overflow-hidden border border-border/80 bg-background p-8 text-center shadow-[0_32px_90px_rgba(0,0,0,0.12)] md:p-14"
+            className="relative mx-auto max-w-5xl overflow-hidden border border-border/80 bg-background p-6 sm:p-10 md:p-14 text-center shadow-[0_32px_90px_rgba(0,0,0,0.12)]"
           >
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/[0.08] blur-[90px]" />
             <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/[0.045] blur-[90px]" />
 
-            <div className="relative z-10 mx-auto max-w-3xl space-y-7">
+            <div className="relative z-10 mx-auto max-w-3xl space-y-6 sm:space-y-7">
               <div className="flex justify-center">
                 <SectionLabel>Start the Conversation</SectionLabel>
               </div>
 
-              <h2 className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground">
                 Ready to Strengthen Your <br />
                 <em className="not-italic text-primary">Business Operations?</em>
               </h2>
 
-              <p className="mx-auto max-w-2xl text-base font-light leading-relaxed text-muted-foreground">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base font-light leading-relaxed text-muted-foreground">
                 Let’s discuss how Neal Foundation can support your sales,
                 customer support, BPO, consulting, and software requirements.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2 w-full sm:w-auto">
                 <Button
                   size="lg"
                   asChild
-                  className="h-12 rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
+                  className="h-12 w-full sm:w-auto rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
                 >
                   <Link href="/contact">
                     Book a Consultation <ArrowRight className="ml-2 h-4 w-4" />
@@ -452,7 +450,7 @@ export default function Services() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="h-12 rounded-md border-primary/25 px-8 text-xs font-bold uppercase tracking-[0.14em]"
+                  className="h-12 w-full sm:w-auto rounded-md border-primary/25 px-8 text-xs font-bold uppercase tracking-[0.14em]"
                 >
                   <Link href="/">
                     Back to Home <ArrowUpRight className="ml-2 h-4 w-4" />

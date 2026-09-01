@@ -61,8 +61,8 @@ export default function Home() {
       src="/hero-bg.webp"
       alt="Neal Foundation Hero Background"
       className="h-full w-full object-cover"
+      fetchPriority="high"
     />
-
   </div>
 
   {/* Texture + Glow */}
@@ -74,7 +74,7 @@ export default function Home() {
   <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
   <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
 
-  <div className="container relative z-10 mx-auto px-6 pb-20 md:pb-24 lg:px-8">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 pb-20 md:pb-24 lg:px-8">
     <motion.div
       initial="hidden"
       animate="visible"
@@ -118,12 +118,12 @@ export default function Home() {
       {/* CTA Buttons */}
       <motion.div
         variants={fadeUp}
-        className="flex flex-col gap-4 pt-2 sm:flex-row"
+        className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
       >
         <Button
           size="lg"
           asChild
-          className="h-[52px] rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
+          className="h-[52px] w-full sm:w-auto rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
           data-testid="button-schedule-consultation"
         >
           <Link href="/contact">
@@ -136,7 +136,7 @@ export default function Home() {
           size="lg"
           variant="outline"
           asChild
-          className="h-[52px] rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
+          className="h-[52px] w-full sm:w-auto rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
         >
           <Link href="/services">
             Explore Services
@@ -144,8 +144,6 @@ export default function Home() {
           </Link>
         </Button>
       </motion.div>
-
- 
     </motion.div>
   </div>
 </section>
@@ -165,7 +163,7 @@ export default function Home() {
       {/* ─── ABOUT ─── */}
      <section
   id="about"
-  className="relative overflow-hidden py-28 lg:py-36 bg-background"
+  className="relative overflow-hidden py-20 lg:py-36 bg-background"
   data-testid="section-about"
 >
   {/* Premium Background */}
@@ -177,13 +175,13 @@ export default function Home() {
     <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
   </div>
 
-  <div className="container mx-auto px-6 lg:px-8 relative z-10">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       variants={stagger}
-      className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center"
     >
       {/* Left Content */}
       <div className="relative">
@@ -210,16 +208,15 @@ export default function Home() {
           </span>
         </motion.h2>
 
-        <motion.div variants={fadeUp} className="mt-8 flex items-center gap-4">
+        <motion.div variants={fadeUp} className="mt-6 sm:mt-8 flex items-center gap-4">
           <div className="w-14 h-px bg-primary" />
           <div className="w-2 h-2 rounded-full bg-primary" />
           <div className="w-24 h-px bg-gradient-to-r from-primary/60 to-transparent" />
         </motion.div>
 
-
         <motion.p
           variants={fadeUp}
-          className="mt-5 max-w-xl text-base text-muted-foreground leading-relaxed font-light"
+          className="mt-5 max-w-xl text-sm sm:text-base text-muted-foreground leading-relaxed font-light"
         >
        Neal Foundation provides end-to-end sales, customer support, lead generation,
 consulting, software, and operational solutions. Beyond staffing, we design
@@ -230,7 +227,7 @@ and build sustainable operations for long-term success.
         {/* Premium Feature Grid */}
         <motion.div
           variants={fadeUp}
-          className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4"
+          className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
         >
           {[
             {
@@ -279,9 +276,9 @@ and build sustainable operations for long-term success.
         {/* Mini CTA */}
         <motion.div
           variants={fadeUp}
-          className="mt-10 inline-flex items-center gap-3 text-sm font-semibold text-foreground group"
+          className="mt-8 sm:mt-10 inline-flex items-center gap-3 text-sm font-semibold text-foreground group"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
             <ArrowUpRight className="w-4 h-4 text-primary transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
           <span>Built for performance, process, and long-term growth.</span>
@@ -297,14 +294,18 @@ and build sustainable operations for long-term success.
               alt="Corporate team at Neal Foundation"
               className="object-cover w-full h-full scale-105 transition-transform duration-700 hover:scale-100"
               data-testid="img-about"
+              loading="lazy"
+              decoding="async"
             />
 
             {/* Logo Badge */}
-            <div className="absolute top-6 right-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/25 bg-background/85 p-2 shadow-xl backdrop-blur-md logo-halo">
+            <div className="absolute top-4 sm:top-6 right-4 sm:right-6 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl border border-primary/25 bg-background/85 p-2 shadow-xl backdrop-blur-md logo-halo">
               <img
                 src="/NealFoundation Logo.webp"
                 alt="Neal Foundation"
                 className="w-full h-full object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>      
           </div>
@@ -316,7 +317,7 @@ and build sustainable operations for long-term success.
 
       {/* ─── STATS ─── */}
    <section
-  className="relative overflow-hidden bg-[#F7F4EE] py-24 lg:py-28"
+  className="relative overflow-hidden bg-[#F7F4EE] py-16 sm:py-24 lg:py-28"
   data-testid="section-stats"
 >
   {/* Premium Background */}
@@ -327,8 +328,8 @@ and build sustainable operations for long-term success.
   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
   <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
 
-  <div className="container mx-auto px-6 lg:px-8 relative z-10">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
       {[
         { value: 100, label: "Business Projects", suffix: "+" },
         { value: 50, label: "Team Members", suffix: "+" },
@@ -337,7 +338,7 @@ and build sustainable operations for long-term success.
       ].map((stat, i) => (
         <div
           key={i}
-          className="group relative overflow-hidden rounded-[28px] border border-primary/10 bg-white/45 px-5 py-10 text-center shadow-[0_20px_60px_rgba(0,0,0,0.045)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:bg-white/70 hover:shadow-[0_30px_90px_rgba(255,0,0,0.10)]"
+          className="group relative overflow-hidden rounded-[20px] sm:rounded-[28px] border border-primary/10 bg-white/45 p-4 sm:px-5 sm:py-10 text-center shadow-[0_20px_60px_rgba(0,0,0,0.045)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:bg-white/70 hover:shadow-[0_30px_90px_rgba(255,0,0,0.10)]"
         >
           {/* Inner Glow */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-primary/5 opacity-80" />
@@ -346,18 +347,18 @@ and build sustainable operations for long-term success.
           <div className="absolute top-0 left-1/2 h-px w-20 -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
           {/* Diamond Mark */}
-          <div className="mx-auto mb-6 h-2 w-2 rotate-45 bg-primary/60 shadow-[0_0_18px_rgba(255,0,0,0.45)]" />
+          <div className="mx-auto mb-4 sm:mb-6 h-2 w-2 rotate-45 bg-primary/60 shadow-[0_0_18px_rgba(255,0,0,0.45)]" />
 
           <div className="relative z-10">
             {typeof stat.value === "string" ? (
               <div
-                className="mb-4 font-serif text-5xl font-bold leading-none text-primary lg:text-6xl"
+                className="mb-2 sm:mb-4 font-serif text-3xl sm:text-5xl font-bold leading-none text-primary lg:text-6xl"
                 data-testid="stat-support-operations"
               >
                 {stat.value}
               </div>
             ) : (
-              <div className="mb-4 [&_*:first-child]:font-serif [&_*:first-child]:text-5xl [&_*:first-child]:font-bold [&_*:first-child]:leading-none [&_*:first-child]:text-primary lg:[&_*:first-child]:text-6xl">
+              <div className="mb-2 sm:mb-4 [&_*:first-child]:font-serif [&_*:first-child]:text-3xl sm:[&_*:first-child]:text-5xl [&_*:first-child]:font-bold [&_*:first-child]:leading-none [&_*:first-child]:text-primary lg:[&_*:first-child]:text-6xl">
                 <AnimatedCounter
                   value={stat.value}
                   label=""
@@ -366,15 +367,15 @@ and build sustainable operations for long-term success.
               </div>
             )}
 
-            <div className="mx-auto mb-4 h-px w-10 bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
+            <div className="mx-auto mb-3 sm:mb-4 h-px w-10 bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
 
-            <div className="text-[10px] font-bold uppercase tracking-[0.26em] text-foreground/70">
+            <div className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.26em] text-foreground/70">
               {stat.label}
             </div>
           </div>
 
           {/* Bottom Shine */}
-          <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
+          <div className="absolute bottom-0 left-4 sm:left-6 right-4 sm:right-6 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
         </div>
       ))}
     </div>
@@ -384,29 +385,29 @@ and build sustainable operations for long-term success.
       {/* ─── SERVICES ─── */}
 <section
   id="services"
-  className="py-28 lg:py-32 bg-background relative overflow-hidden"
+  className="py-20 lg:py-32 bg-background relative overflow-hidden"
   data-testid="section-services"
 >
   {/* Premium Background Texture */}
   <div className="absolute inset-0 dot-grid-light opacity-35" />
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.05),transparent_35%)]" />
 
-  <div className="container mx-auto px-6 lg:px-8 relative z-10">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       variants={stagger}
-      className="mb-16 lg:mb-18"
+      className="mb-12 sm:mb-16 lg:mb-18"
     >
       <motion.div variants={fadeUp} className="mb-6">
         <SectionLabel>Our Expertise</SectionLabel>
       </motion.div>
 
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
         <motion.h2
           variants={fadeUp}
-          className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-[1.06] max-w-3xl text-foreground"
+          className="font-serif font-bold text-2xl sm:text-3xl lg:text-5xl leading-[1.06] max-w-3xl text-foreground"
         >
           Comprehensive Solutions <br />
           <em className="not-italic text-primary">Built for Scale</em>
@@ -414,7 +415,7 @@ and build sustainable operations for long-term success.
 
         <motion.p
           variants={fadeUp}
-          className="text-muted-foreground max-w-md text-base font-light leading-relaxed lg:mb-2"
+          className="text-muted-foreground max-w-md text-sm sm:text-base font-light leading-relaxed lg:mb-2"
         >
           End-to-end outsourcing and consulting services that integrate
           seamlessly with your operations.
@@ -439,7 +440,7 @@ and build sustainable operations for long-term success.
               duration: 0.65,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="group relative overflow-hidden bg-background min-h-[360px] transition-all duration-500 hover:bg-card hover:z-10 hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
+            className="group relative overflow-hidden bg-background min-h-0 sm:min-h-[360px] transition-all duration-500 hover:bg-card hover:z-10 hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
             data-testid={`card-service-${i}`}
           >
             {/* Top Hover Line */}
@@ -449,7 +450,7 @@ and build sustainable operations for long-term success.
             <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             {/* Background Number */}
-            <span className="absolute right-6 top-5 font-serif text-6xl font-bold leading-none text-primary/[0.04] transition-all duration-500 group-hover:text-primary/[0.09] group-hover:scale-105">
+            <span className="pointer-events-none select-none absolute right-6 top-5 font-serif text-6xl font-bold leading-none text-primary/[0.04] transition-all duration-500 group-hover:text-primary/[0.09] group-hover:scale-105">
               {service.num}
             </span>
 
@@ -509,10 +510,9 @@ and build sustainable operations for long-term success.
     </div>
   </div>
 </section>
-
       {/* ─── WHY CHOOSE US ─── */}
     <section
-  className="relative overflow-hidden bg-muted py-28 lg:py-32"
+  className="relative overflow-hidden bg-muted py-20 lg:py-32"
   data-testid="section-why"
 >
   {/* Premium Background */}
@@ -523,16 +523,15 @@ and build sustainable operations for long-term success.
   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
   <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-  <div className="container relative z-10 mx-auto px-6 lg:px-8">
-    <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-20">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 items-start gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-20">
       {/* Left Content */}
-      <div className="space-y-12">
-        <div className="space-y-7">
+      <div className="space-y-8 sm:space-y-12">
+        <div className="space-y-5 sm:space-y-7">
           <SectionLabel>Why Choose Us</SectionLabel>
 
           <h2
-            className="font-serif font-bold leading-[1.06] text-foreground  text-2xl sm:text-3xl lg:text-5xl"
-           
+            className="font-serif font-bold leading-[1.06] text-foreground text-2xl sm:text-3xl lg:text-5xl"
           >
             The Foundation of <br />
             <em className="not-italic text-primary">
@@ -543,7 +542,7 @@ and build sustainable operations for long-term success.
           <div className="h-px w-24 bg-gradient-to-r from-primary/60 to-transparent" />
         </div>
 
-        <div className="relative space-y-6">
+        <div className="relative space-y-5 sm:space-y-6">
           {/* Vertical Accent Line */}
           <div className="absolute left-[15px] top-2 bottom-2 hidden w-px bg-gradient-to-b from-primary/40 via-border to-transparent sm:block" />
 
@@ -579,17 +578,17 @@ and build sustainable operations for long-term success.
                 duration: 0.65,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative flex gap-5 sm:gap-7"
+              className="group relative flex gap-4 sm:gap-7"
               data-testid={`pillar-${i}`}
             >
               <div className="relative z-10 mt-1 flex h-8 w-8 flex-shrink-0 items-center justify-center border border-primary/25 bg-muted text-[10px] font-serif font-bold italic text-primary/55 transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_14px_35px_rgba(220,38,38,0.22)]">
                 {p.n}
               </div>
 
-              <div className="relative flex-1 overflow-hidden border-t border-border/80 pt-5 transition-all duration-500 group-hover:border-primary/45">
+              <div className="relative flex-1 overflow-hidden border-t border-border/80 pt-4 sm:pt-5 transition-all duration-500 group-hover:border-primary/45">
                 <div className="absolute left-0 top-0 h-px w-0 bg-primary transition-all duration-500 group-hover:w-24" />
 
-                <h4 className="mb-2 font-serif text-lg font-bold text-foreground transition-colors duration-500 group-hover:text-primary">
+                <h4 className="mb-2 font-serif text-base sm:text-lg font-bold text-foreground transition-colors duration-500 group-hover:text-primary">
                   {p.title}
                 </h4>
 
@@ -619,20 +618,20 @@ and build sustainable operations for long-term success.
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
 
           {/* Big Watermark Number */}
-          <span className="absolute right-8 top-8 font-serif text-8xl font-bold leading-none text-primary/[0.045]">
+          <span className="pointer-events-none select-none absolute right-8 top-8 font-serif text-8xl font-bold leading-none text-primary/[0.045]">
             05
           </span>
 
-          <div className="relative z-10 space-y-8 p-8 md:p-12 lg:p-14">
+          <div className="relative z-10 space-y-6 sm:space-y-8 p-6 sm:p-8 md:p-12 lg:p-14">
             <SectionLabel>Our Business Model</SectionLabel>
 
-            <div className="space-y-5">
-              <h3 className="font-serif text-3xl font-bold leading-tight text-foreground md:text-4xl">
+            <div className="space-y-4 sm:space-y-5">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-foreground md:text-4xl">
                 Partnerships Built <br />
                 on Growth
               </h3>
 
-              <p className="text-base font-light leading-relaxed text-muted-foreground">
+              <p className="text-sm sm:text-base font-light leading-relaxed text-muted-foreground">
                 Rather than simply providing resources, Neal Foundation works closely
                 with clients to build stronger teams, improve operational performance,
                 increase revenue opportunities, develop long-term business strategies,
@@ -660,8 +659,8 @@ and build sustainable operations for long-term success.
               ))}
             </div>
 
-            <div className="border-t border-border pt-6">
-              <p className="font-serif text-lg italic leading-relaxed text-foreground/75">
+            <div className="border-t border-border pt-5 sm:pt-6">
+              <p className="font-serif text-base sm:text-lg italic leading-relaxed text-foreground/75">
                 “Our success is directly connected to the success of our clients.”
               </p>
             </div>
@@ -674,11 +673,11 @@ and build sustainable operations for long-term success.
     </div>
   </div>
 </section>
-{/* 24X7 connect section  */}
 
+{/* ─── 24X7 CONNECT SECTION ─── */}
 <section
   id="business-ecosystem"
-  className="relative overflow-hidden bg-background py-28 lg:py-32"
+  className="relative overflow-hidden bg-background py-20 lg:py-32"
   data-testid="section-business-ecosystem"
 >
   {/* Premium Background */}
@@ -689,8 +688,8 @@ and build sustainable operations for long-term success.
   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
   <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-  <div className="container relative z-10 mx-auto px-6 lg:px-8">
-    <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-20">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 items-center gap-12 sm:gap-16 lg:grid-cols-12 lg:gap-20">
       {/* Left Content */}
       <motion.div
         initial="hidden"
@@ -705,7 +704,7 @@ and build sustainable operations for long-term success.
 
         <motion.h2
           variants={fadeUp}
-          className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+          className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
         >
           Find the Best Internet Provider in Your Area {''}
           <em className="not-italic text-primary">24X7NetConnect</em>
@@ -713,7 +712,7 @@ and build sustainable operations for long-term success.
 
         <motion.p
           variants={fadeUp}
-          className="mt-7 max-w-xl text-base font-light leading-relaxed text-muted-foreground"
+          className="mt-5 sm:mt-7 max-w-xl text-sm sm:text-base font-light leading-relaxed text-muted-foreground"
         >
           24X7NetConnect is the parent business platform focused on helping
           residential and business customers search, compare, and connect with
@@ -722,7 +721,7 @@ and build sustainable operations for long-term success.
 
         <motion.p
           variants={fadeUp}
-          className="mt-5 max-w-xl text-base font-light leading-relaxed text-muted-foreground"
+          className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base font-light leading-relaxed text-muted-foreground"
         >
           Under this broader business ecosystem, Neal Foundation operates as
           the business growth, outsourcing, customer support, lead generation,
@@ -731,7 +730,7 @@ and build sustainable operations for long-term success.
 
         <motion.div
           variants={fadeUp}
-          className="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2"
+          className="mt-7 sm:mt-9 grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2"
         >
           {parentCompanyPoints.map((item) => (
             <div
@@ -744,12 +743,12 @@ and build sustainable operations for long-term success.
           ))}
         </motion.div>
 
-        <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-4">
+        <motion.div variants={fadeUp} className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <a
             href="https://www.nealfoundation.com"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-7 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
+            className="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-md bg-primary px-7 text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
           >
             Visit Website
             <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -757,7 +756,7 @@ and build sustainable operations for long-term success.
 
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center rounded-md border border-primary/25 bg-card/50 px-7 text-xs font-bold uppercase tracking-[0.14em] text-primary backdrop-blur-sm transition-all duration-300 hover:border-primary hover:bg-primary/5"
+            className="inline-flex h-12 w-full sm:w-auto items-center justify-center rounded-md border border-primary/25 bg-card/50 px-7 text-xs font-bold uppercase tracking-[0.14em] text-primary backdrop-blur-sm transition-all duration-300 hover:border-primary hover:bg-primary/5"
           >
             Connect With Us
             <ArrowRight className="ml-2 h-4 w-4" />
@@ -782,18 +781,20 @@ and build sustainable operations for long-term success.
           <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
 
           {/* Watermark */}
-          <span className="absolute right-8 top-8 font-serif text-8xl font-bold leading-none text-primary/[0.045]">
+          <span className="pointer-events-none select-none absolute right-8 top-8 font-serif text-8xl font-bold leading-none text-primary/[0.045]">
             24
           </span>
 
-          <div className="relative z-10 p-8 md:p-10 lg:p-12">
+          <div className="relative z-10 p-5 sm:p-8 md:p-10 lg:p-12">
             {/* Logo Box */}
-            <div className="mb-8 overflow-hidden border border-primary/20 bg-black p-6 shadow-[0_20px_60px_rgba(0,0,0,0.16)]">
-              <div className="flex items-center justify-between gap-6">
+            <div className="mb-6 sm:mb-8 overflow-hidden border border-primary/20 bg-black p-4 sm:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.16)]">
+              <div className="flex items-center justify-between gap-4 sm:gap-6">
                 <img
                   src="/24x7netconnect-logo.webp"
                   alt="24X7NetConnect Logo"
-                  className="h-20 w-auto max-w-[260px] object-contain"
+                  className="h-14 sm:h-20 w-auto max-w-full object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div className="hidden h-12 w-12 items-center justify-center border border-[#f26a21]/40 bg-[#f26a21]/10 text-[#f26a21] md:flex">
@@ -803,24 +804,24 @@ and build sustainable operations for long-term success.
             </div>
 
             {/* Parent Company Card */}
-            <div className="relative overflow-hidden border border-primary/20 bg-background p-6">
+            <div className="relative overflow-hidden border border-primary/20 bg-background p-4 sm:p-6">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-transparent" />
 
-              <div className="relative z-10 flex items-start gap-5">
-                <div className="flex h-13 w-13 items-center justify-center border border-primary/30 bg-primary/10 text-primary px-2">
+              <div className="relative z-10 flex items-start gap-4 sm:gap-5">
+                <div className="flex h-11 w-11 sm:h-13 sm:w-13 items-center justify-center border border-primary/30 bg-primary/10 text-primary px-2 flex-shrink-0">
                   <Wifi className="h-5 w-5" />
                 </div>
 
                 <div>
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
+                  <p className="mb-1 sm:mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary">
                     Parent Company
                   </p>
 
-                  <h3 className="font-serif text-2xl font-bold text-foreground">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
                     24X7NetConnect
                   </h3>
 
-                  <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">
+                  <p className="mt-2 sm:mt-3 text-sm font-light leading-relaxed text-muted-foreground">
                     A smart internet service comparison company helping users
                     find providers, compare plans, check availability, and
                     connect with the best internet options by location.
@@ -830,31 +831,31 @@ and build sustainable operations for long-term success.
             </div>
 
             {/* Connector Line */}
-            <div className="mx-auto flex w-px flex-col items-center py-5">
-              <div className="h-10 w-px bg-gradient-to-b from-primary/60 to-border" />
+            <div className="mx-auto flex w-px flex-col items-center py-4 sm:py-5">
+              <div className="h-8 sm:h-10 w-px bg-gradient-to-b from-primary/60 to-border" />
               <div className="h-2 w-2 rotate-45 bg-primary shadow-[0_0_18px_rgba(220,38,38,0.45)]" />
-              <div className="h-10 w-px bg-gradient-to-b from-border to-primary/40" />
+              <div className="h-8 sm:h-10 w-px bg-gradient-to-b from-border to-primary/40" />
             </div>
 
             {/* Neal Foundation Division */}
-            <div className="relative overflow-hidden border border-border/80 bg-muted p-6 transition-all duration-500 hover:border-primary/30">
+            <div className="relative overflow-hidden border border-border/80 bg-muted p-4 sm:p-6 transition-all duration-500 hover:border-primary/30">
               <div className="absolute left-0 top-0 h-full w-[2px] bg-primary" />
 
-              <div className="relative z-10 flex items-start gap-5">
-                <div className="flex h-13 w-13 items-center justify-center px-2 border border-primary/25 bg-background text-primary">
+              <div className="relative z-10 flex items-start gap-4 sm:gap-5">
+                <div className="flex h-11 w-11 sm:h-13 sm:w-13 items-center justify-center px-2 border border-primary/25 bg-background text-primary flex-shrink-0">
                   <Building2 className="h-5 w-5" />
                 </div>
 
                 <div>
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+                  <p className="mb-1 sm:mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
                     Business Division
                   </p>
 
-                  <h3 className="font-serif text-2xl font-bold text-foreground">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
                     Neal Foundation
                   </h3>
 
-                  <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">
+                  <p className="mt-2 sm:mt-3 text-sm font-light leading-relaxed text-muted-foreground">
                     The business growth and outsourcing division supporting
                     companies with sales, customer service, BPO, consulting,
                     software, and operational solutions.
@@ -864,7 +865,7 @@ and build sustainable operations for long-term success.
                     href="https://www.nealfoundation.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-primary transition-all duration-300 hover:gap-3"
+                    className="mt-4 sm:mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-primary transition-all duration-300 hover:gap-3"
                   >
                     www.nealfoundation.com
                     <ArrowUpRight className="h-3.5 w-3.5" />
@@ -872,9 +873,6 @@ and build sustainable operations for long-term success.
                 </div>
               </div>
             </div>
-
-
-          
           </div>
 
           <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
@@ -887,7 +885,7 @@ and build sustainable operations for long-term success.
       {/* ─── VALUES & INDUSTRIES ─── */}
      <section
   id="industries"
-  className="relative overflow-hidden bg-background py-28 lg:py-32"
+  className="relative overflow-hidden bg-background py-20 lg:py-32"
   data-testid="section-industries"
 >
   {/* Premium Background */}
@@ -898,16 +896,15 @@ and build sustainable operations for long-term success.
   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
   <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-  <div className="container relative z-10 mx-auto px-6 lg:px-8">
-    <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-24">
       {/* Core Values */}
-      <div className="space-y-12">
-        <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-12">
+        <div className="space-y-4 sm:space-y-6">
           <SectionLabel>What Drives Us</SectionLabel>
 
           <h2
-            className="font-serif font-bold leading-[1.06] text-foreground"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+            className="font-serif font-bold leading-[1.06] text-foreground text-2xl sm:text-3xl lg:text-5xl"
           >
             Our Core Values
           </h2>
@@ -927,7 +924,7 @@ and build sustainable operations for long-term success.
                 duration: 0.55,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative flex gap-5 overflow-hidden border-b border-border/60 px-1 py-6 transition-all duration-500 last:border-b-0 hover:bg-muted/35 sm:gap-6 sm:px-4"
+              className="group relative flex gap-4 sm:gap-6 overflow-hidden border-b border-border/60 px-1 sm:px-4 py-4 sm:py-6 transition-all duration-500 last:border-b-0 hover:bg-muted/35"
               data-testid={`value-${val.title.toLowerCase()}`}
             >
               {/* Hover Accent */}
@@ -943,7 +940,7 @@ and build sustainable operations for long-term success.
               </div>
 
               <div className="relative z-10">
-                <h4 className="mb-2 font-serif text-xl font-bold text-foreground transition-colors duration-500 group-hover:text-primary">
+                <h4 className="mb-2 font-serif text-lg sm:text-xl font-bold text-foreground transition-colors duration-500 group-hover:text-primary">
                   {val.title}
                 </h4>
 
@@ -957,13 +954,12 @@ and build sustainable operations for long-term success.
       </div>
 
       {/* Industries */}
-      <div className="space-y-12">
-        <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-12">
+        <div className="space-y-4 sm:space-y-6">
           <SectionLabel>Where We Operate</SectionLabel>
 
           <h2
-            className="font-serif font-bold leading-[1.06] text-foreground"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+            className="font-serif font-bold leading-[1.06] text-foreground text-2xl sm:text-3xl lg:text-5xl"
           >
             Industries We Serve
           </h2>
@@ -991,7 +987,7 @@ and build sustainable operations for long-term success.
                 duration: 0.55,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative flex cursor-pointer items-center justify-between overflow-hidden border-b border-border/60 px-1 py-5 transition-all duration-500 last:border-b-0 hover:bg-muted/35 sm:px-4"
+              className="group relative flex cursor-pointer items-center justify-between overflow-hidden border-b border-border/60 px-1 sm:px-4 py-4 sm:py-5 transition-all duration-500 last:border-b-0 hover:bg-muted/35"
               data-testid={`industry-${i}`}
             >
               {/* Hover Accent */}
@@ -1003,7 +999,7 @@ and build sustainable operations for long-term success.
               <div className="relative z-10 flex items-center gap-4">
                 <span className="h-1.5 w-1.5 rotate-45 bg-primary/55 transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_14px_rgba(220,38,38,0.45)]" />
 
-                <span className="text-base font-medium text-foreground transition-colors duration-500 group-hover:text-primary">
+                <span className="text-sm sm:text-base font-medium text-foreground transition-colors duration-500 group-hover:text-primary">
                   {ind}
                 </span>
               </div>
@@ -1021,7 +1017,7 @@ and build sustainable operations for long-term success.
 
       {/* ─── TESTIMONIALS ─── */}
       <section
-  className="relative overflow-hidden bg-background py-28 lg:py-32"
+  className="relative overflow-hidden bg-background py-20 lg:py-32"
   data-testid="section-testimonials"
 >
   {/* Premium Background */}
@@ -1032,23 +1028,22 @@ and build sustainable operations for long-term success.
   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
   <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-  <div className="container relative z-10 mx-auto px-6 lg:px-8">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       variants={stagger}
-      className="mb-14 lg:mb-16"
+      className="mb-12 sm:mb-14 lg:mb-16"
     >
       <motion.div variants={fadeUp} className="mb-5">
         <SectionLabel>Client Success</SectionLabel>
       </motion.div>
 
       <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-        <motion.div variants={fadeUp} className="space-y-5">
+        <motion.div variants={fadeUp} className="space-y-4 sm:space-y-5">
           <h2
-            className="font-serif font-bold leading-[1.06] text-foreground"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+            className="font-serif font-bold leading-[1.06] text-foreground text-2xl sm:text-3xl lg:text-5xl"
           >
             Delivering Real <br />
             <em className="not-italic text-primary">Results</em>
@@ -1087,7 +1082,7 @@ and build sustainable operations for long-term success.
           duration: 0.65,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="group relative flex min-h-[340px] flex-col overflow-hidden bg-card p-7 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_28px_75px_rgba(0,0,0,0.14)] lg:p-9"
+        className="group relative flex min-h-[340px] flex-col overflow-hidden bg-card p-6 sm:p-7 lg:p-9 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_28px_75px_rgba(0,0,0,0.14)]"
         data-testid={`card-testimonial-${i}`}
       >
         {/* Top Accent Line */}
@@ -1100,18 +1095,18 @@ and build sustainable operations for long-term success.
         <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-primary/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
         {/* Quote Watermark */}
-        <div className="absolute right-6 top-4 select-none font-serif text-9xl font-bold leading-none text-primary/[0.04] transition-all duration-500 group-hover:scale-105 group-hover:text-primary/[0.085]">
+        <div className="pointer-events-none select-none absolute right-6 top-4 font-serif text-9xl font-bold leading-none text-primary/[0.04] transition-all duration-500 group-hover:scale-105 group-hover:text-primary/[0.085]">
           “
         </div>
 
         {/* Card Number */}
-        <span className="absolute bottom-6 right-7 font-serif text-5xl font-bold leading-none text-primary/[0.035] transition-colors duration-500 group-hover:text-primary/[0.08]">
+        <span className="pointer-events-none select-none absolute bottom-6 right-7 font-serif text-5xl font-bold leading-none text-primary/[0.035] transition-colors duration-500 group-hover:text-primary/[0.08]">
           0{i + 1}
         </span>
 
         <div className="relative z-10 flex h-full flex-col">
           {/* Top Row */}
-          <div className="mb-7 flex items-center justify-between">
+          <div className="mb-6 sm:mb-7 flex items-center justify-between">
             <div className="flex h-11 w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_16px_40px_rgba(220,38,38,0.22)]">
               <span className="font-serif text-3xl leading-none">“</span>
             </div>
@@ -1122,12 +1117,12 @@ and build sustainable operations for long-term success.
           </div>
 
           {/* Quote */}
-          <p className="flex-1 text-[15px] font-light italic leading-8 text-muted-foreground transition-colors duration-500 group-hover:text-foreground/80">
+          <p className="flex-1 text-sm sm:text-[15px] font-light italic leading-7 sm:leading-8 text-muted-foreground transition-colors duration-500 group-hover:text-foreground/80">
             {t.quote}
           </p>
 
           {/* Divider */}
-          <div className="my-8 h-px w-full bg-gradient-to-r from-primary/35 via-border to-transparent" />
+          <div className="my-6 sm:my-8 h-px w-full bg-gradient-to-r from-primary/35 via-border to-transparent" />
 
           {/* Author */}
           <div className="flex items-center gap-4">
@@ -1161,7 +1156,7 @@ and build sustainable operations for long-term success.
       {/* ─── CONTACT ─── */}
   <section
   id="contact"
-  className="relative overflow-hidden bg-background py-28 lg:py-32"
+  className="relative overflow-hidden bg-background py-20 lg:py-32"
   data-testid="section-contact"
 >
   {/* Premium Background */}
@@ -1172,7 +1167,7 @@ and build sustainable operations for long-term success.
   <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
   <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-  <div className="container relative z-10 mx-auto px-6 lg:px-8">
+  <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
     <div className="mx-auto max-w-6xl">
       <div className="relative">
         {/* Outer Border Glow */}
@@ -1180,7 +1175,7 @@ and build sustainable operations for long-term success.
 
         <div className="relative grid grid-cols-1 overflow-hidden bg-border/70 lg:grid-cols-5 lg:gap-px">
           {/* Left Contact Info */}
-          <div className="relative overflow-hidden bg-muted p-8 text-foreground md:p-12 lg:col-span-2 lg:p-14">
+          <div className="relative overflow-hidden bg-muted p-6 sm:p-8 text-foreground md:p-12 lg:col-span-2 lg:p-14">
             {/* Premium Glow */}
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/[0.08] blur-[90px]" />
             <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/[0.045] blur-[90px]" />
@@ -1189,16 +1184,16 @@ and build sustainable operations for long-term success.
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
 
             {/* Watermark */}
-            <span className="absolute right-8 top-8 font-serif text-8xl font-bold leading-none text-primary/[0.045]">
+            <span className="pointer-events-none select-none absolute right-8 top-8 font-serif text-8xl font-bold leading-none text-primary/[0.045]">
               01
             </span>
 
-            <div className="relative z-10 flex h-full flex-col justify-between gap-12">
-              <div className="space-y-7">
+            <div className="relative z-10 flex h-full flex-col justify-between gap-8 sm:gap-12">
+              <div className="space-y-5 sm:space-y-7">
                 <SectionLabel>Get in Touch</SectionLabel>
 
-                <div className="space-y-5">
-                  <h2 className="font-serif text-3xl font-bold leading-tight text-foreground md:text-4xl">
+                <div className="space-y-4 sm:space-y-5">
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold leading-tight text-foreground md:text-4xl">
                     Let&apos;s Grow <br />
                     <em className="not-italic text-primary">Together</em>
                   </h2>
@@ -1214,7 +1209,7 @@ and build sustainable operations for long-term success.
                 </div>
               </div>
 
-              <div className="space-y-5">
+              <div className="space-y-4 sm:space-y-5">
                 {[
                   {
                     icon: <Globe className="h-3.5 w-3.5" />,
@@ -1234,7 +1229,7 @@ and build sustainable operations for long-term success.
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="group flex items-center gap-4 border-t border-border/70 pt-5 first:border-t-0 first:pt-0"
+                    className="group flex items-center gap-3 sm:gap-4 border-t border-border/70 pt-4 sm:pt-5 first:border-t-0 first:pt-0"
                   >
                     <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_14px_35px_rgba(220,38,38,0.20)]">
                       {item.icon}
@@ -1255,11 +1250,11 @@ and build sustainable operations for long-term success.
           </div>
 
           {/* Right Contact Form */}
-          <div className="relative bg-card p-8 md:p-12 lg:col-span-3 lg:p-14">
+          <div className="relative bg-card p-6 sm:p-8 md:p-12 lg:col-span-3 lg:p-14">
             <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/[0.055] blur-[80px]" />
 
-            <div className="relative z-10 mb-10 space-y-3">
-              <h3 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
+            <div className="relative z-10 mb-8 sm:mb-10 space-y-2 sm:space-y-3">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground md:text-3xl">
                 Start Your Consultation
               </h3>
               <p className="max-w-xl text-sm font-light leading-relaxed text-muted-foreground">
@@ -1271,10 +1266,10 @@ and build sustainable operations for long-term success.
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="relative z-10 space-y-8"
+                className="relative z-10 space-y-6 sm:space-y-8"
                 data-testid="form-contact"
               >
-                <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 sm:gap-7 md:grid-cols-2">
                   <FormField
                     control={form.control}
                     name="name"
@@ -1318,7 +1313,7 @@ and build sustainable operations for long-term success.
                   />
                 </div>
 
-                <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 sm:gap-7 md:grid-cols-2">
                   <FormField
                     control={form.control}
                     name="email"

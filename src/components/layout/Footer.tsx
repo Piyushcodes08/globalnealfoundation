@@ -26,24 +26,23 @@ export default function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px section-accent-line" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-primary" />
 
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="pt-20 pb-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-14 border-b border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-16 sm:pt-20 pb-12 sm:pb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-14 border-b border-border">
 
-          <div className="lg:col-span-4 space-y-8">
+          <div className="sm:col-span-2 lg:col-span-4 space-y-6 sm:space-y-8">
             <div className="flex items-center gap-4">
               <img
                 src="/NealFoundation Logo.webp"
                 alt="Neal Foundation logo"
-                className="h-24 w-24 object-contain flex-shrink-0"
+                className="h-20 w-20 sm:h-24 sm:w-24 object-contain flex-shrink-0"
+                loading="lazy"
+                decoding="async"
               />
-           
             </div>
 
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs font-light">
               Driven by Growth. Powered by Partnership.
             </p>
-
-         
 
             <div className="space-y-2">
               {["United States", "Canada", "Bharat"].map((loc) => (
@@ -55,9 +54,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-3 space-y-5 sm:space-y-6">
             <h4 className="font-sans font-semibold text-[10px] tracking-[0.2em] uppercase text-foreground/45">Services</h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3 sm:space-y-3.5">
               {services.map((s) => (
                 <li key={s.label}>
                   <Link
@@ -72,9 +71,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-5 sm:space-y-6">
             <h4 className="font-sans font-semibold text-[10px] tracking-[0.2em] uppercase text-foreground/45">Navigation</h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3 sm:space-y-3.5">
               {quickLinks.map((l) => (
                 <li key={l.label}>
                   <Link
@@ -89,9 +88,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-3 space-y-5 sm:space-y-6">
             <h4 className="font-sans font-semibold text-[10px] tracking-[0.2em] uppercase text-foreground/45">Legal</h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3 sm:space-y-3.5">
               <li>
                 <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 font-light">
                   Privacy Policy
@@ -104,7 +103,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="pt-5">
+            <div className="pt-4 sm:pt-5">
               <p className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground mb-3">Global Operations</p>
               <Link
                 href="/contact"
@@ -119,7 +118,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="py-7 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="py-6 sm:py-7 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <p className="text-[11px] text-muted-foreground font-light tracking-wide">
             &copy; {currentYear} Neal Foundation &amp; 24X7NetConnect. All rights reserved.
           </p>

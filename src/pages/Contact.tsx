@@ -82,7 +82,7 @@ export default function Contact() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 pb-20 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 pb-20 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -117,12 +117,12 @@ export default function Contact() {
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col gap-4 pt-2 sm:flex-row"
+              className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
               <Button
                 size="lg"
                 asChild
-                className="h-[52px] rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
+                className="h-[52px] w-full sm:w-auto rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
               >
                 <a href="#contact-form">
                   Start Consultation
@@ -134,7 +134,7 @@ export default function Contact() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="h-[52px] rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
+                className="h-[52px] w-full sm:w-auto rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
               >
                 <Link href="/services">
                   Explore Services
@@ -147,7 +147,7 @@ export default function Contact() {
       </section>
 
       {/* FLOATING CONTACT HIGHLIGHTS */}
-      <section className="relative  px-6 lg:px-8">
+      <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="relative">
             <div className="absolute -inset-px bg-gradient-to-br from-primary/30 via-border to-primary/10" />
@@ -160,7 +160,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.55 }}
-                  className="group relative overflow-hidden bg-card/95 p-6 backdrop-blur-xl transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
+                  className="group relative overflow-hidden bg-card/95 p-5 sm:p-6 backdrop-blur-xl transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
                 >
                   <div className="absolute left-0 top-0 h-[2px] w-full origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100" />
                   <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-primary/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
@@ -189,7 +189,7 @@ export default function Contact() {
       {/* CONTACT FORM */}
       <section
         id="contact-form"
-        className="relative overflow-hidden bg-background py-28 lg:py-32"
+        className="relative overflow-hidden bg-background py-20 lg:py-32"
         data-testid="section-contact"
       >
         <div className="absolute inset-0 dot-grid-light opacity-35" />
@@ -198,14 +198,14 @@ export default function Contact() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 sm:mb-16 grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:items-end">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
               <motion.div variants={fadeUp}>
                 <SectionLabel>Get in Touch</SectionLabel>
@@ -213,7 +213,7 @@ export default function Contact() {
 
               <motion.h2
                 variants={fadeUp}
-                className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 Start a Conversation <br />
                 <em className="not-italic text-primary">With Our Team</em>
@@ -242,7 +242,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="relative overflow-hidden bg-muted p-8 md:p-12 lg:col-span-5"
+                className="relative overflow-hidden bg-muted p-6 sm:p-8 md:p-12 lg:col-span-5"
               >
                 <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/[0.08] blur-[90px]" />
                 <div className="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-primary/[0.045] blur-[90px]" />
@@ -252,23 +252,21 @@ export default function Contact() {
                   01
                 </span>
 
-                <div className="relative z-10 flex h-full min-h-[620px] flex-col justify-between gap-12">
-                  <div className="space-y-7">
+                <div className="relative z-10 flex h-full min-h-0 lg:min-h-[620px] flex-col justify-between gap-8 sm:gap-12">
+                  <div className="space-y-5 sm:space-y-7">
                     <SectionLabel>Business Inquiry</SectionLabel>
 
-                    <h3 className="font-serif text-3xl font-bold leading-tight text-foreground md:text-4xl">
+                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-foreground">
                       Let&apos;s Grow <br />
                       <em className="not-italic text-primary">Together</em>
                     </h3>
-
-                
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     {businessAreas.map((item) => (
                       <div
                         key={item}
-                        className="group flex items-center gap-3 border-t border-border/70 pt-4 text-sm font-light text-foreground/75 first:border-t-0 first:pt-0 hover:text-primary"
+                        className="group flex items-center gap-3 border-t border-border/70 pt-3 sm:pt-4 text-sm font-light text-foreground/75 first:border-t-0 first:pt-0 hover:text-primary"
                       >
                         <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center border border-primary/20 bg-background text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
                           <ArrowRight className="h-3.5 w-3.5" />
@@ -278,8 +276,8 @@ export default function Contact() {
                     ))}
                   </div>
 
-                  <div className="border-t border-border/70 pt-6">
-                    <p className="font-serif text-lg italic leading-relaxed text-foreground/75">
+                  <div className="border-t border-border/70 pt-5 sm:pt-6">
+                    <p className="font-serif text-base sm:text-lg italic leading-relaxed text-foreground/75">
                       “Our success is directly connected to the success of our
                       clients.”
                     </p>
@@ -293,17 +291,17 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="relative overflow-hidden bg-card p-8 md:p-12 lg:col-span-7"
+                className="relative overflow-hidden bg-card p-6 sm:p-8 md:p-12 lg:col-span-7"
               >
                 <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/[0.055] blur-[80px]" />
 
-                <div className="relative z-10 mb-10 flex items-start justify-between gap-6">
+                <div className="relative z-10 mb-8 sm:mb-10 flex items-start justify-between gap-6">
                   <div>
-                    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                    <p className="mb-2 sm:mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
                       Consultation Request
                     </p>
 
-                    <h3 className="font-serif text-2xl font-bold text-foreground md:text-3xl">
+                    <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
                       Tell Us About Your Goals
                     </h3>
                   </div>
@@ -316,10 +314,10 @@ export default function Contact() {
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="relative z-10 space-y-8"
+                    className="relative z-10 space-y-6 sm:space-y-8"
                     data-testid="form-contact"
                   >
-                    <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-5 sm:gap-7 md:grid-cols-2">
                       <FormField
                         control={form.control}
                         name="name"
@@ -363,7 +361,7 @@ export default function Contact() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-5 sm:gap-7 md:grid-cols-2">
                       <FormField
                         control={form.control}
                         name="email"
@@ -502,7 +500,7 @@ export default function Contact() {
         <div className="absolute inset-0 dot-grid-light opacity-50" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-px bg-border/70 md:grid-cols-3">
             {contactCards.map((card, i) => (
               <motion.div
@@ -515,11 +513,11 @@ export default function Contact() {
                   duration: 0.6,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative overflow-hidden bg-muted p-8 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
+                className="group relative overflow-hidden bg-muted p-6 sm:p-8 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
               >
                 <div className="absolute left-0 top-0 h-[2px] w-full origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100" />
 
-                <div className="mb-6 flex h-11 w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
+                <div className="mb-5 sm:mb-6 flex h-11 w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
                   {card.icon}
                 </div>
 
@@ -541,42 +539,42 @@ export default function Contact() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-background py-24 lg:py-28">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-28">
         <div className="absolute inset-0 dot-grid-light opacity-35" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.06),transparent_45%)]" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto max-w-5xl overflow-hidden border border-border/80 bg-card p-8 text-center shadow-[0_32px_90px_rgba(0,0,0,0.12)] md:p-14"
+            className="relative mx-auto max-w-5xl overflow-hidden border border-border/80 bg-card p-6 sm:p-10 md:p-14 text-center shadow-[0_32px_90px_rgba(0,0,0,0.12)]"
           >
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/[0.08] blur-[90px]" />
             <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/[0.045] blur-[90px]" />
 
-            <div className="relative z-10 mx-auto max-w-3xl space-y-7">
+            <div className="relative z-10 mx-auto max-w-3xl space-y-6 sm:space-y-7">
               <div className="flex justify-center">
                 <SectionLabel>Ready to Start?</SectionLabel>
               </div>
 
-              <h2 className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground">
                 Let&apos;s Discuss Your <br />
                 <em className="not-italic text-primary">Growth Requirements</em>
               </h2>
 
-              <p className="mx-auto max-w-2xl text-base font-light leading-relaxed text-muted-foreground">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base font-light leading-relaxed text-muted-foreground">
                 Our team is ready to understand your goals and help you build a
                 scalable, performance-driven business operation.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2 w-full sm:w-auto">
                 <Button
                   size="lg"
                   asChild
-                  className="h-[52px] rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
+                  className="h-[52px] w-full sm:w-auto rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
                 >
                   <a href="#contact-form">
                     Fill the Form
@@ -588,7 +586,7 @@ export default function Contact() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="h-[52px] rounded-md border-primary/25 px-8 text-xs font-bold uppercase tracking-[0.14em]"
+                  className="h-[52px] w-full sm:w-auto rounded-md border-primary/25 px-8 text-xs font-bold uppercase tracking-[0.14em]"
                 >
                   <Link href="/">
                     Back to Home

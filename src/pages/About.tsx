@@ -41,8 +41,9 @@ export default function About() {
         <div className="absolute inset-0">
           <img
             src="/about-hero-bg.webp"
-            alt="24X7NetConnect About Hero Background"
+            alt="Neal Foundation About Hero Background"
             className="h-full w-full object-cover"
+            fetchPriority="high"
           />
         </div>
 
@@ -55,7 +56,7 @@ export default function About() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
         <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -66,7 +67,7 @@ export default function About() {
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-background/45 px-4 py-2 backdrop-blur-md">
                 <Sparkles className="h-4 w-4 text-primary" />
                 <span className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                  About 24X7NetConnect
+                  About Neal Foundation
                 </span>
               </div>
             </motion.div>
@@ -75,7 +76,7 @@ export default function About() {
               variants={fadeUp}
               className="font-serif font-bold display-hero text-foreground w-full max-w-3xl lg:w-2/3"
             >
-              Scalable Services for{" "}
+              Scalable Operations for{" "}
               <span className="text-gradient-brand">Business Growth</span>
             </motion.h1>
 
@@ -83,17 +84,17 @@ export default function About() {
               variants={fadeUp}
               className="max-w-2xl text-base font-light leading-8 text-muted-foreground"
             >
-              24X7NetConnect is your smart internet service comparison platform designed to help residential and business customers find the most reliable and cost-effective internet providers available at their location.
+              Neal Foundation delivers enterprise sales outsourcing, customer support, lead generation, consulting, and operational excellence across the United States, Canada, and Bharat.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-4 pt-2">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
               <Button
                 size="lg"
                 asChild
-                className="h-12 rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
+                className="h-12 w-full sm:w-auto rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
               >
                 <Link href="/contact">
-                  Search Now <ArrowRight className="ml-2 h-4 w-4" />
+                  Book Consultation <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
 
@@ -101,7 +102,7 @@ export default function About() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="h-12 rounded-md border-primary/30 bg-background/35 px-8 text-xs font-bold uppercase tracking-[0.14em] backdrop-blur-md hover:bg-background/70"
+                className="h-12 w-full sm:w-auto rounded-md border-primary/30 bg-background/35 px-8 text-xs font-bold uppercase tracking-[0.14em] backdrop-blur-md hover:bg-background/70"
               >
                 <a href="#how-it-works">Learn More</a>
               </Button>
@@ -115,13 +116,13 @@ export default function About() {
         <div className="absolute inset-0 dot-grid-light opacity-30" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24"
+            className="grid grid-cols-1 items-center gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-24"
           >
             <div>
               <motion.div variants={fadeUp} className="mb-6">
@@ -130,7 +131,7 @@ export default function About() {
 
               <motion.h2
                 variants={fadeUp}
-                className="mb-8 font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="mb-8 font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 Simplifying{" "}
                 <em className="not-italic text-primary">
@@ -162,7 +163,7 @@ export default function About() {
                   return (
                     <div
                       key={item.title}
-                      className="group relative overflow-hidden border border-border/70 bg-card/60 p-5 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/[0.04]"
+                      className="group relative overflow-hidden border border-border/70 bg-card/60 p-4 sm:p-5 transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/[0.04]"
                     >
                       <div className="absolute left-0 top-0 h-full w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100" />
 
@@ -196,9 +197,9 @@ export default function About() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
 
-                  <div className="absolute bottom-6 left-6 right-6 border border-primary/20 bg-background/85 p-5 backdrop-blur-md">
-                    <div className="mb-3 flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center border border-primary/25 bg-primary/10 text-primary">
+                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 border border-primary/20 bg-background/85 p-4 sm:p-5 backdrop-blur-md">
+                    <div className="mb-2 sm:mb-3 flex items-center gap-3">
+                      <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center border border-primary/25 bg-primary/10 text-primary">
                         <Globe className="h-4 w-4" />
                       </div>
 
@@ -207,7 +208,7 @@ export default function About() {
                       </p>
                     </div>
 
-                    <p className="font-serif text-xl font-bold text-foreground">
+                    <p className="font-serif text-lg sm:text-xl font-bold text-foreground">
                       United States · Canada · Bharat
                     </p>
                   </div>
@@ -219,30 +220,30 @@ export default function About() {
       </section>
 
       {/* STATS */}
-      <section className="relative overflow-hidden bg-[#F7F4EE] py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[#F7F4EE] py-16 sm:py-20 lg:py-24">
         <div className="absolute inset-0 dot-grid-light opacity-60" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 lg:gap-6">
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden border border-primary/10 bg-white/45 px-5 py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.045)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:bg-white/70"
+                className="group relative overflow-hidden border border-primary/10 bg-white/45 p-4 sm:px-5 sm:py-9 text-center shadow-[0_20px_60px_rgba(0,0,0,0.045)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:bg-white/70"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-primary/5 opacity-80" />
 
                 <div className="relative z-10">
-                  <div className="mx-auto mb-5 h-2 w-2 rotate-45 bg-primary/60 shadow-[0_0_18px_rgba(220,38,38,0.45)]" />
+                  <div className="mx-auto mb-4 sm:mb-5 h-2 w-2 rotate-45 bg-primary/60 shadow-[0_0_18px_rgba(220,38,38,0.45)]" />
 
-                  <div className="mb-4 font-serif text-5xl font-bold leading-none text-primary lg:text-6xl">
+                  <div className="mb-3 sm:mb-4 font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-none text-primary">
                     {stat.value}
                   </div>
 
-                  <div className="mx-auto mb-4 h-px w-10 bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
+                  <div className="mx-auto mb-3 sm:mb-4 h-px w-8 sm:w-10 bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
 
-                  <div className="text-[10px] font-bold uppercase tracking-[0.24em] text-foreground/70">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] sm:tracking-[0.24em] text-foreground/70">
                     {stat.label}
                   </div>
                 </div>
@@ -253,12 +254,12 @@ export default function About() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="how-it-works" className="relative overflow-hidden bg-background py-28 lg:py-32">
+      <section id="how-it-works" className="relative overflow-hidden bg-background py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-30" />
         <div className="absolute right-0 top-0 h-[520px] w-[520px] rounded-full bg-primary/6 blur-[130px]" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="mb-16 space-y-6">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 sm:mb-16 space-y-4 sm:space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -273,7 +274,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+              className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
             >
               How 24X7NetConnect{" "}
               <em className="not-italic text-primary">Works</em>
@@ -294,13 +295,13 @@ export default function About() {
                   duration: 0.55,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative flex gap-5 sm:gap-7"
+                className="group relative flex gap-4 sm:gap-7"
               >
                 <div className="relative z-10 mt-1 flex h-9 w-9 flex-shrink-0 items-center justify-center border border-primary/25 bg-muted text-[11px] font-serif font-bold italic text-primary/55 transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
                   {step.n}
                 </div>
 
-                <div className="flex-1 border-t border-border/80 pt-5 transition-all duration-500 group-hover:border-primary/45">
+                <div className="flex-1 border-t border-border/80 pt-4 sm:pt-5 transition-all duration-500 group-hover:border-primary/45">
                   <h4 className="mb-2 font-serif text-lg font-bold text-foreground transition-colors duration-500 group-hover:text-primary">
                     {step.title}
                   </h4>
@@ -316,12 +317,12 @@ export default function About() {
       </section>
 
       {/* INTERNET SERVICES */}
-      <section className="relative overflow-hidden bg-muted py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-muted py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-50" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="mb-16 space-y-6">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 sm:mb-16 space-y-4 sm:space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -336,14 +337,14 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+              className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
             >
               Services We Help{" "}
               <em className="not-italic text-primary">You Compare</em>
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-px bg-border/70 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-px bg-border/70 md:grid-cols-2 lg:grid-cols-3">
             {internetServices.map((service, i) => {
               const Icon = service.icon;
 
@@ -358,7 +359,7 @@ export default function About() {
                     duration: 0.6,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="group relative overflow-hidden bg-muted p-8 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
+                  className="group relative overflow-hidden bg-muted p-6 sm:p-8 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
                 >
                   <div className="absolute left-0 top-0 h-[2px] w-full origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100" />
 
@@ -392,18 +393,18 @@ export default function About() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="relative overflow-hidden bg-background py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-30" />
         <div className="absolute left-0 bottom-0 h-[520px] w-[520px] rounded-full bg-primary/6 blur-[130px]" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="mb-16 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-24">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 sm:mb-16 grid grid-cols-1 items-end gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
               <motion.div variants={fadeUp}>
                 <SectionLabel>Why Choose Us</SectionLabel>
@@ -411,7 +412,7 @@ export default function About() {
 
               <motion.h2
                 variants={fadeUp}
-                className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 Why Choose{" "}
                 <em className="not-italic text-primary">24X7NetConnect</em>
@@ -441,13 +442,13 @@ export default function About() {
                   duration: 0.55,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative flex gap-5 overflow-hidden border-b border-border/60 px-1 py-6 transition-all duration-500 last:border-b-0 hover:bg-background/45 sm:px-4"
+                className="group relative flex gap-4 sm:gap-5 overflow-hidden border-b border-border/60 px-2 sm:px-4 py-5 sm:py-6 transition-all duration-500 last:border-b-0 hover:bg-background/45"
               >
                 <div className="absolute left-0 top-0 h-full w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100" />
 
                 <CheckCircle2 className="relative z-10 h-5 w-5 flex-shrink-0 text-primary transition-all duration-500 group-hover:scale-110" />
 
-                <p className="relative z-10 text-base font-light text-foreground transition-colors duration-500 group-hover:text-primary">
+                <p className="relative z-10 text-sm sm:text-base font-light text-foreground transition-colors duration-500 group-hover:text-primary">
                   {reason}
                 </p>
               </motion.div>
@@ -457,11 +458,11 @@ export default function About() {
       </section>
 
       {/* OUR MISSION */}
-      <section className="relative overflow-hidden bg-muted py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-muted py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-30" />
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-px bg-border/70 lg:grid-cols-2">
             {[
               {
@@ -490,14 +491,14 @@ export default function About() {
                     duration: 0.65,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="group relative min-h-[360px] overflow-hidden bg-card p-8 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)] lg:p-10"
+                  className="group relative min-h-0 sm:min-h-[360px] overflow-hidden bg-card p-6 sm:p-8 lg:p-10 transition-all duration-500 hover:z-10 hover:bg-background hover:shadow-[0_24px_65px_rgba(0,0,0,0.12)]"
                 >
                   <div className="absolute left-0 top-0 h-[2px] w-full origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100" />
                   <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
                   <div className="relative z-10">
-                    <div className="mb-8 flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                    <div className="mb-6 sm:mb-8 flex items-center justify-between">
+                      <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center border border-primary/25 bg-background text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
                         <Icon className="h-4 w-4" />
                       </div>
 
@@ -508,11 +509,11 @@ export default function About() {
 
                     <SectionLabel>{item.label}</SectionLabel>
 
-                    <h3 className="mb-5 mt-6 font-serif text-2xl font-bold leading-tight text-foreground transition-colors duration-500 group-hover:text-primary lg:text-3xl">
+                    <h3 className="mb-4 sm:mb-5 mt-4 sm:mt-6 font-serif text-xl sm:text-2xl lg:text-3xl font-bold leading-tight text-foreground transition-colors duration-500 group-hover:text-primary">
                       {item.title}
                     </h3>
 
-                    <p className="text-base font-light leading-relaxed text-muted-foreground">
+                    <p className="text-sm sm:text-base font-light leading-relaxed text-muted-foreground">
                       {item.desc}
                     </p>
                   </div>
@@ -524,41 +525,41 @@ export default function About() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative overflow-hidden bg-background py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-background py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-35" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.06),transparent_45%)]" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto max-w-5xl overflow-hidden border border-border/80 bg-card p-8 text-center shadow-[0_32px_90px_rgba(0,0,0,0.12)] md:p-14"
+            className="relative mx-auto max-w-5xl overflow-hidden border border-border/80 bg-card p-6 sm:p-10 md:p-14 text-center shadow-[0_32px_90px_rgba(0,0,0,0.12)]"
           >
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/[0.08] blur-[90px]" />
             <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/[0.045] blur-[90px]" />
 
-            <div className="relative z-10 mx-auto max-w-3xl space-y-7">
+            <div className="relative z-10 mx-auto max-w-3xl space-y-6 sm:space-y-7">
               <div className="flex justify-center">
                 <SectionLabel>Ready to Find?</SectionLabel>
               </div>
 
-              <h2 className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground">
                 Search. Compare. <br />
                 <em className="not-italic text-primary">Connect.</em>
               </h2>
 
-              <p className="mx-auto max-w-2xl text-base font-light leading-relaxed text-muted-foreground">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base font-light leading-relaxed text-muted-foreground">
                 Enter your address or ZIP code today and discover the best internet provider for your home or business with 24X7NetConnect.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2 w-full sm:w-auto">
                 <Button
                   size="lg"
                   asChild
-                  className="h-12 rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
+                  className="h-12 w-full sm:w-auto rounded-md px-8 text-xs font-bold uppercase tracking-[0.14em] premium-glow"
                 >
                   <Link href="/contact">
                     Start Searching <ArrowRight className="ml-2 h-4 w-4" />
@@ -569,7 +570,7 @@ export default function About() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="h-12 rounded-md border-primary/25 px-8 text-xs font-bold uppercase tracking-[0.14em]"
+                  className="h-12 w-full sm:w-auto rounded-md border-primary/25 px-8 text-xs font-bold uppercase tracking-[0.14em]"
                 >
                   <Link href="/">Back to Home</Link>
                 </Button>

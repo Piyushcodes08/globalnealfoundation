@@ -42,7 +42,7 @@ export default function Industries() {
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
         <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 pb-20 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 pb-20 lg:px-8">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -77,12 +77,12 @@ export default function Industries() {
 
             <motion.div
               variants={fadeUp}
-              className="flex flex-col gap-4 pt-2 sm:flex-row"
+              className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
               <Button
                 size="lg"
                 asChild
-                className="h-[52px] rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
+                className="h-[52px] w-full sm:w-auto rounded-md bg-primary px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 premium-glow"
               >
                 <Link href="/contact">
                   Discuss Your Sector
@@ -94,7 +94,7 @@ export default function Industries() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="h-[52px] rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
+                className="h-[52px] w-full sm:w-auto rounded-md border-primary/30 bg-background/35 px-9 text-[0.84rem] font-bold uppercase tracking-[0.08em] backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background/70"
               >
                 <a href="#industries-grid">
                   View Industries
@@ -109,7 +109,7 @@ export default function Industries() {
       {/* INDUSTRIES GRID */}
       <section
         id="industries-grid"
-        className="relative overflow-hidden bg-background py-28 lg:py-32"
+        className="relative overflow-hidden bg-background py-20 lg:py-32"
       >
         <div className="absolute inset-0 dot-grid-light opacity-35" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.055),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(220,38,38,0.035),transparent_34%)]" />
@@ -117,22 +117,22 @@ export default function Industries() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mb-16"
+            className="mb-12 sm:mb-16"
           >
             <motion.div variants={fadeUp} className="mb-6">
               <SectionLabel>Our Focus Areas</SectionLabel>
             </motion.div>
 
-            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <div className="flex flex-col justify-between gap-6 sm:gap-8 lg:flex-row lg:items-end">
               <motion.h2
                 variants={fadeUp}
-                className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 Sector-Specific{" "}
                 <em className="not-italic text-primary">Expertise</em>
@@ -219,7 +219,7 @@ export default function Industries() {
       </section>
 
       {/* APPROACH */}
-      <section className="relative overflow-hidden bg-muted py-28 lg:py-32">
+      <section className="relative overflow-hidden bg-muted py-20 lg:py-32">
         <div className="absolute inset-0 dot-grid-light opacity-55" />
         <div className="absolute right-0 top-0 h-[560px] w-[560px] rounded-full bg-primary/7 blur-[130px]" />
         <div className="absolute left-0 bottom-0 h-[420px] w-[420px] rounded-full bg-primary/5 blur-[120px]" />
@@ -227,14 +227,14 @@ export default function Industries() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-        <div className="container relative z-10 mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-24">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-12 sm:gap-16 lg:grid-cols-2 lg:gap-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
               variants={stagger}
-              className="space-y-7"
+              className="space-y-6 sm:space-y-7"
             >
               <motion.div variants={fadeUp}>
                 <SectionLabel>Our Approach</SectionLabel>
@@ -242,7 +242,7 @@ export default function Industries() {
 
               <motion.h2
                 variants={fadeUp}
-                className="font-serif text-3xl font-bold leading-[1.06] text-foreground sm:text-4xl lg:text-5xl"
+                className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold leading-[1.06] text-foreground"
               >
                 Tailored Solutions for{" "}
                 <em className="not-italic text-primary">Every Sector</em>
@@ -257,11 +257,11 @@ export default function Industries() {
                 operational context — then building solutions designed to fit.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="space-y-5 pt-2">
+              <motion.div variants={fadeUp} className="space-y-4 sm:space-y-5 pt-2">
                 {approachSteps.map((item) => (
                   <div
                     key={item.n}
-                    className="group relative flex items-start gap-4 overflow-hidden border border-border/70 bg-background/60 p-5 transition-all duration-500 hover:border-primary/30 hover:bg-background"
+                    className="group relative flex items-start gap-3 sm:gap-4 overflow-hidden border border-border/70 bg-background/60 p-4 sm:p-5 transition-all duration-500 hover:border-primary/30 hover:bg-background"
                   >
                     <div className="absolute left-0 top-0 h-full w-[2px] origin-top scale-y-0 bg-primary transition-transform duration-500 group-hover:scale-y-100" />
 
@@ -270,7 +270,7 @@ export default function Industries() {
                     </span>
 
                     <div className="relative z-10">
-                      <p className="mb-1 font-serif text-lg font-bold text-foreground transition-colors duration-300 group-hover:text-primary">
+                      <p className="mb-1 font-serif text-base sm:text-lg font-bold text-foreground transition-colors duration-300 group-hover:text-primary">
                         {item.title}
                       </p>
 
@@ -290,7 +290,7 @@ export default function Industries() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="lg:sticky lg:top-32"
             >
-              <div className="premium-surface relative overflow-hidden border border-border/80 bg-background/85 p-8 shadow-[0_28px_90px_rgba(0,0,0,0.10)] backdrop-blur-sm md:p-12">
+              <div className="premium-surface relative overflow-hidden border border-border/80 bg-background/85 p-6 sm:p-8 md:p-12 shadow-[0_28px_90px_rgba(0,0,0,0.10)] backdrop-blur-sm">
                 <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/[0.08] blur-[90px]" />
                 <div className="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-primary/[0.045] blur-[90px]" />
                 <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-primary via-primary/60 to-transparent" />
@@ -299,15 +299,15 @@ export default function Industries() {
                   03
                 </span>
 
-                <div className="relative z-10 space-y-7">
+                <div className="relative z-10 space-y-6 sm:space-y-7">
                   <SectionLabel>Global Coverage</SectionLabel>
 
-                  <h3 className="font-serif text-2xl font-bold leading-tight text-foreground sm:text-3xl">
+                  <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold leading-tight text-foreground">
                     Serving Clients Across{" "}
                     <em className="not-italic text-primary">Three Nations</em>
                   </h3>
 
-                  <p className="text-base font-light leading-relaxed text-muted-foreground">
+                  <p className="text-sm sm:text-base font-light leading-relaxed text-muted-foreground">
                     Regardless of your industry or geography, Neal Foundation
                     delivers consistent operational excellence — backed by
                     coordinated global delivery across the United States, Canada,

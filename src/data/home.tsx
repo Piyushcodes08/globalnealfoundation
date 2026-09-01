@@ -154,20 +154,29 @@ export const testimonials = [
   {
     quote:
       "Neal Foundation helped us scale our customer support and close more deals each month.",
+    author: "Mia Carter",
     name: "Mia Carter",
+    initials: "MC",
     role: "VP of Operations",
+    company: "Apex Telecom",
   },
   {
     quote:
       "Their sales outsourcing team delivered a pipeline we could rely on.",
+    author: "Alex Rivera",
     name: "Alex Rivera",
-    role: "Founder, TechStart",
+    initials: "AR",
+    role: "Founder",
+    company: "TechStart",
   },
   {
     quote:
       "Working with Neal Foundation made our growth execution feel effortless.",
+    author: "Priya Singh",
     name: "Priya Singh",
+    initials: "PS",
     role: "Chief Growth Officer",
+    company: "ScalePoint",
   },
 ]
 
